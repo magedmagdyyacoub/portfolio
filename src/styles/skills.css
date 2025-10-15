@@ -1,0 +1,77 @@
+/* 🎯 Skills Section Base */
+.skills-section {
+  padding: 80px 0;
+  text-align: center;
+  transition: all 0.4s ease;
+}
+
+/* 🌞 Light Mode */
+.skills-section.light-mode {
+  background: #f8f9fa;
+  color: #222;
+}
+
+/* 🌙 Dark Mode */
+.skills-section.dark-mode {
+  background: #373535;
+  color: #f8f9fa;
+}
+
+/* ✨ العنوان بتدرج لوني */
+.skills-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 60px;
+  background: linear-gradient(90deg, #007bff, #8a2be2, #007bff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 🧩 شبكة المهارات */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 30px;
+  justify-items: center;
+}
+
+/* 💼 الكروت */
+.skill-card {
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  text-align: center;
+  width: 200px;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(15, 81, 174, 0.2);
+}
+
+/* 🌞 Light Card */
+.skill-card.light-card {
+  background: white;
+  color: #222;
+}
+
+/* 🌙 Dark Card */
+.skill-card.dark-card {
+  background: #000; /* الكارت نفسه أسود */
+  color: #f8f9fa;
+  border: 1px solid #333; /* حدود ناعمة */
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
+}
+
+/* ✨ تأثير عند الـ hover في الوضع الداكن */
+.skill-card.dark-card:hover {
+  box-shadow: 0 0 15px rgba(138, 43, 226, 0.4); /* توهج بنفسجي خفيف */
+  transform: translateY(-8px);
+}
+
+/* 🔷 الأيقونة */
+.skill-icon {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
