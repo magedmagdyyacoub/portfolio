@@ -72,3 +72,28 @@
     height: 160px;
   }
 }
+.project-carousel img {
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #0d6efd;
+}
+
+.project-details ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .project-carousel img {
+    max-height: 300px;
+  }
+}

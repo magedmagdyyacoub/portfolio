@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 import Hero from "../components/Hero";
 import Hero2 from "../components/Hero2";
 import Skills from "../components/Skills";
-import Footer from "../components/Footer";
+
 import "../index.css";
 
 const Home = () => {

@@ -56,7 +56,6 @@
 .dots-left,
 .dots-right {
   position: absolute;
-
   transform: translateY(-50%);
   display: flex;
   flex-direction: row;
@@ -67,17 +66,15 @@
 
 .box-image {
   position: absolute;
-  top: -60%; /* ترفع الصورة لفوق بحيث يخرج الجزء العلوي فقط */
+  top: -60%;
   left: 50%;
   transform: translateX(-50%);
-  width: 160%; /* تكبير العرض */
-  height:200%; /* تكبير الطول */
+  width: 160%;
+  height: 200%;
   object-fit: contain;
   z-index: 2;
   pointer-events: none;
 }
-
-
 
 .column {
   display: flex;
@@ -87,27 +84,37 @@
 }
 
 .dots-left {
-left: calc(50% - 195px);
+  left: calc(50% - 195px);
   transform: translateX(-140%);
   top: 160px;
 }
 
 .dots-right {
-   right: calc(50% - 195px); 
+  right: calc(50% - 195px);
   transform: translateX(140%);
   top: 460px;
 }
 
-/* 📱 تجاوب الموبايل */
-@media (max-width: 992px) {
+
+/* 📱 تجاوب التابلت */
+@media (min-width: 577px) and (max-width: 992px) {
   .gradient-box2 {
     width: 240px;
     height: 240px;
   }
 
-  .dots-left,
+
+  /* ✅ ضبط أماكن النقط أقرب للمربع */
+  .dots-left {
+    left: calc(50% - 150px);
+    transform: translateX(-100%);
+    top: 100px; /* كانت 2px */
+  }
+
   .dots-right {
-    height: 240px;
+    right: calc(50% - 150px);
+    transform: translateX(100%);
+    top: 420px; /* كانت 460px */
   }
 
   .dot {
@@ -115,8 +122,16 @@ left: calc(50% - 195px);
     height: 9px;
     margin: 4px 0;
   }
+
+  .box-image {
+    top: -45%;
+    width: 150%;
+    height: 190%;
+  }
 }
 
+
+/* 📱 تجاوب الموبايل */
 @media (max-width: 576px) {
   .gradient-box2 {
     width: 200px;
@@ -125,12 +140,32 @@ left: calc(50% - 195px);
 
   .dots-left,
   .dots-right {
-    height: 200px;
+    height: 180px;
+    gap: 10px;
+  }
+
+  /* ✅ تعديل أماكن النقاط */
+  .dots-left {
+    left: calc(50% - 120px);
+    transform: translateX(-100%);
+    top: 280px; /* كانت 160px */
+  }
+
+  .dots-right {
+    right: calc(50% - 120px);
+    transform: translateX(100%);
+    top: 460px; /* كانت 460px */
   }
 
   .dot {
     width: 8px;
     height: 8px;
     margin: 3px 0;
+  }
+
+  .box-image {
+    top: -40%;
+    width: 140%;
+    height: 180%;
   }
 }
