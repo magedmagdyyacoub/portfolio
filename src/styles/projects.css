@@ -72,6 +72,91 @@
     height: 160px;
   }
 }
+
+/* Pagination Styles */
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.pagination-btn,
+.pagination-number {
+  padding: 8px 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+.pagination-btn:hover:not(.disabled),
+.pagination-number:hover:not(.active) {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-btn.disabled,
+.pagination-number.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination-number.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.pagination-numbers {
+  display: flex;
+  gap: 5px;
+}
+
+/* Dark Mode Pagination */
+.dark-pagination {
+  color: #f8f9fa;
+  border-color: #444;
+}
+
+.dark-pagination:hover:not(.active) {
+  background: #8a2be2;
+  border-color: #8a2be2;
+}
+
+.dark-pagination.active {
+  background: #8a2be2;
+  border-color: #8a2be2;
+}
+
+/* Light Mode Pagination */
+.light-pagination {
+  color: #333;
+  border-color: #ddd;
+}
+
+.light-pagination:hover:not(.active) {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+.light-pagination.active {
+  background: #007bff;
+  border-color: #007bff;
+}
+
+@media (max-width: 576px) {
+  .pagination-btn,
+  .pagination-number {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
 .project-carousel img {
   max-height: 500px;
   object-fit: cover;

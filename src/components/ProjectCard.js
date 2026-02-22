@@ -10,11 +10,21 @@ const ProjectCard = ({ project }) => {
   const navigate = useNavigate();
 
   const text = {
-    en: { live: "Live Demo", code: "View Code" },
-    ar: { live: "عرض مباشر", code: "عرض الكود" },
+    en: { live: "Live Demo", code: "View Code", gallery: "Gallery" },
+    ar: { live: "عرض مباشر", code: "عرض الكود", gallery: "معرض الصور" },
   };
 
   const current = text[language];
+
+  // Check if demoLink exists
+  const hasDemoLink = project.demoLink && project.demoLink.trim() !== "";
+  // Check if images array exists (for gallery)
+  const hasGallery = project.images && project.images.length > 0;
+
+  const handleGalleryClick = (e) => {
+    e.stopPropagation();
+    navigate(`/projects/${project.id}`);
+  };
 
   return (
     <div
@@ -27,15 +37,24 @@ const ProjectCard = ({ project }) => {
         <h4>{project.title}</h4>
         <p>{project.description}</p>
         <div className="project-buttons">
-          <a
-            href={project.demoLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`btn ${darkMode ? "btn-outline-light" : "btn-outline-dark"}`}
-            onClick={(e) => e.stopPropagation()} // عشان ما يفتحش صفحة التفاصيل لما تدوس على الزر
-          >
-            {current.live}
-          </a>
+          {hasDemoLink ? (
+            <a
+              href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`btn ${darkMode ? "btn-outline-light" : "btn-outline-dark"}`}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {current.live}
+            </a>
+          ) : hasGallery ? (
+            <button
+              className={`btn ${darkMode ? "btn-outline-light" : "btn-outline-dark"}`}
+              onClick={handleGalleryClick}
+            >
+              {current.gallery}
+            </button>
+          ) : null}
           <a
             href={project.codeLink}
             target="_blank"
