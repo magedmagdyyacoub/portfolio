@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import "../styles/skills.css";
-import { ThemeContext } from "../context/ThemeContext";
 import { LanguageContext } from "../context/LanguageContext";
 import {
   FaHtml5,
@@ -35,7 +34,6 @@ import {
 } from "react-icons/si";
 
 const Skills = () => {
-  const { darkMode } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
   const text = {

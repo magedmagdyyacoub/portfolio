@@ -1,10 +1,8 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
 import { LanguageContext } from "../context/LanguageContext";
 import "../index.css";
 
 const Hero = () => {
-  const { darkMode } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
   const text = {
